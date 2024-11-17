@@ -9,14 +9,13 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": false,
     "baseUrl": ".",
-    "types": [
-      "webpack-env",
-      "mocha",
-    ],
+ 
     "paths": {
       "@/*": [
         "src/*"
