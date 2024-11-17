@@ -14,6 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # step 1.5 cd to client
+      - name: cd to client
+        run: cd client
+
       # Step 2: Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
