@@ -18,15 +18,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.10.0" # Sesuaikan dengan versi Node.js yang Anda gunakan
+          node-version: "20.10.0" 
 
       # Step 2.1: Setup pnpm
           - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
-
-     
 
       # Step 3.1 cd client
       - name: cd client
