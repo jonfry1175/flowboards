@@ -32,8 +32,9 @@ jobs:
 
       # Step 4: Install dependencies
       - name: Install dependencies
-        run: pnpm install
+        run: cd client && pnpm install
+        # run: pnpm install
 
       # Step 5: Run lint
       - name: Run lint
-        run: pnpm run lint
+        run: cd client && pnpm run lint
