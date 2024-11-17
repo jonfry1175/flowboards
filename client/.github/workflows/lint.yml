@@ -16,6 +16,7 @@ jobs:
 
       # step 1.5 cd to client
       - name: cd to client
+        uses: actions/checkout@v3
         run: cd client
 
       # Step 2: Set up Node.js environment
