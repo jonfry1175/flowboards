@@ -1,0 +1,41 @@
+name: Build client
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.10.0"
+
+      # Step 3: Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: cd client && pnpm install
+        # run: pnpm install
+
+      # Step 5: Run lint
+      - name: Run lint
+        run: cd client && pnpm run lint
+
+      # Step 6: Build project
+      - name: Build project
+        run: cd client && pnpm build
