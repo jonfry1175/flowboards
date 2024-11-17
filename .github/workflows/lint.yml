@@ -12,18 +12,22 @@ jobs:
     steps:
       # Step 1: Checkout repository
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Step 2: cd to client
-      - name: cd to client
-        run: cd client
-
-      # Step 3: Set up Node.js environment
+      # Step 2: Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20.10.0" # Sesuaikan dengan versi Node.js yang Anda gunakan
           cache: "pnpm"
+
+      # Step 3: Install pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # Step 3.1 cd client
+      - name: cd client
+        run: cd client
 
       # Step 4: Install dependencies
       - name: Install dependencies
